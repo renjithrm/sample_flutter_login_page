@@ -28,6 +28,7 @@ class MainFirstPage extends StatelessWidget {
             Container(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(
                     children: [
@@ -72,7 +73,7 @@ class MainFirstPage extends StatelessWidget {
 //----------------------------------------------------------------------------
 //first card
   Widget mycards() => Container(
-        width: 175,
+        width: 180,
         child: Card(
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
@@ -99,7 +100,7 @@ class MainFirstPage extends StatelessWidget {
 //----------------------------------------------------------------------------
 //card2
   Widget mycards2() => Container(
-        width: 175,
+        width: 180,
         child: Card(
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
@@ -133,7 +134,7 @@ class MainFirstPage extends StatelessWidget {
 //----------------------------------------------------------------------------
 //card 3
   Widget mycards3() => Container(
-        width: 175,
+        width: 180,
         child: Card(
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
@@ -164,7 +165,7 @@ class MainFirstPage extends StatelessWidget {
   //card 4
 
   Widget mycards4() => Container(
-        width: 175,
+        width: 180,
         child: Card(
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
@@ -191,7 +192,7 @@ class MainFirstPage extends StatelessWidget {
 //----------------------------------------------------------------------------
 // card 5
   Widget mycards5() => Container(
-        width: 175,
+        width: 180,
         child: Card(
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
@@ -218,7 +219,7 @@ class MainFirstPage extends StatelessWidget {
 //----------------------------------------------------------------------------
   //card 6
   Widget mycards6() => Container(
-        width: 175,
+        width: 180,
         child: Card(
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
@@ -239,7 +240,7 @@ class MainFirstPage extends StatelessWidget {
 //----------------------------------------------------------------------------
 //card 7
   Widget mycards7() => Container(
-        width: 175,
+        width: 180,
         child: Card(
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
@@ -267,7 +268,7 @@ class MainFirstPage extends StatelessWidget {
 //----------------------------------------------------------------------------
 //card 8
   Widget mycards8() => Container(
-        width: 175,
+        width: 180,
         child: Card(
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
@@ -313,15 +314,34 @@ class MainFirstPage extends StatelessWidget {
               title: Text('Share with frinds'),
             ),
             ListTile(
-                leading: Icon(Icons.logout),
-                title: Text('Log out'),
-                onTap: () async {
-                  SharedPreferences sharedPreferences =
-                      await SharedPreferences.getInstance();
-                  await sharedPreferences.remove('Password');
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (contx) => LoginScreen()));
-                })
+              leading: Icon(Icons.logout),
+              title: Text('Log out'),
+              onTap: () async {
+                SharedPreferences sharedPreferences =
+                    await SharedPreferences.getInstance();
+                await sharedPreferences.remove('Password');
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (contx) => LoginScreen()));
+              },
+              // () => AlertDialog(
+              //       title: Text(' log out'),
+              //       content: Text('Are you sure to Log Out'),
+              //       actions: [
+              //         TextButton(
+              //             onPressed: () async {
+              //               SharedPreferences sharedPreferences =
+              //                   await SharedPreferences.getInstance();
+              //               await sharedPreferences.remove('Password');
+              //               Navigator.of(context).push(MaterialPageRoute(
+              //                   builder: (contx) => LoginScreen()));
+              //             },
+              //             child: Text('YES')),
+              //         TextButton(
+              //             onPressed: () => Navigator.pop(context),
+              //             child: Text('NO'))
+              //       ],
+              //     ))
+            )
           ],
         ),
       );
